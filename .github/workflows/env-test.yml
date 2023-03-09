@@ -1,0 +1,10 @@
+name: Env test
+run-name: ${{ github.actor }} is learning GitHub Actions env
+on: [push]
+jobs:
+  env-example:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${TEST_ENV}
+        env:
+          TEST_ENV: this-is-a-test
