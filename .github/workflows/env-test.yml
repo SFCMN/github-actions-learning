@@ -8,5 +8,5 @@ jobs:
       - run: echo ${TEST_ENV}
         env:
           TEST_ENV: this-is-a-test
-      - run: ./.github/scripts/hello-world.sh
+      - run: ls ./.github
         shell: sh
