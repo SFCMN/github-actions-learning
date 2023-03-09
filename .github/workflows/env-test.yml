@@ -1,4 +1,4 @@
-name: Env test
+name: GitHub Actions features test
 run-name: ${{ github.actor }} is learning GitHub Actions env
 on: [push]
 jobs:
@@ -8,3 +8,5 @@ jobs:
       - run: echo ${TEST_ENV}
         env:
           TEST_ENV: this-is-a-test
+      - run: ./.github/scripts/hello-world.sh
+        shell: sh
