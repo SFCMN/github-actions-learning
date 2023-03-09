@@ -8,5 +8,4 @@ jobs:
       - run: echo ${TEST_ENV}
         env:
           TEST_ENV: this-is-a-test
-      - run: ls ./.github
-        shell: sh
+      - run: ls -a
