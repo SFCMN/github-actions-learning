@@ -1,0 +1,27 @@
+name: GitHub Actions Artifacts Test
+on: [push]
+jobs:
+  upload-job:
+    name: Save output
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          path: output.log
+  download-job:
+    name: Download output
+    needs: upload-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: output-log-file
+      - run: ls -la
+      - run: echo 'This is a test for if condition'
+        if: ${{ 8 > 7 }}
