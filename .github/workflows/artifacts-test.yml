@@ -24,4 +24,4 @@ jobs:
           name: output-log-file
       - run: ls -la
       - run: echo 'This is a test for if condition'
-        if: ${{ 6 > 7 }}
+        if: ${{ 8 > 7 }}
